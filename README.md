@@ -1,24 +1,22 @@
-# SPM Tech — Portfólio estático
+# SPM Tech - Portfolio estatico
 
-Site institucional estático para a SPM Tech, com foco em:
+Site institucional estatico para a SPM Tech, com foco em:
 
-- Migração de dados ERP
+- Migracao de dados ERP
 - Performance SQL
-- Diagnóstico técnico de banco
-- Relatórios e BI operacional
-- Integrações e validação de dados
+- Diagnostico tecnico de banco
+- Relatorios e BI operacional
+- Integracoes e validacao de dados
 
 ## Arquivos principais
 
-- `index.html`: conteúdo, SEO e links de contato
+- `index.html`: conteudo, SEO e links de contato
 - `styles.css`: identidade visual e responsividade
-- `script.js`: menu mobile e ano automático
-- `CNAME`: domínio customizado do GitHub Pages
+- `script.js`: menu mobile e ano automatico
 
-## Configurações atuais
+## Configuracoes atuais
 
-- Domínio: `spmtech.com`
-- URL principal: `https://spmtech.com/`
+- URL principal: `https://nicolasfelippi.github.io/`
 - WhatsApp: `+55 47 99211-8488`
 - E-mail: `nicolasfelippi2005@gmail.com`
 
@@ -38,12 +36,10 @@ Depois acesse:
 http://localhost:8000
 ```
 
-## Publicação
+## Publicacao
 
-O site é publicado pelo GitHub Pages a partir da branch configurada no repositório.
-O arquivo `CNAME` deve continuar versionado enquanto `spmtech.com` for o domínio oficial.
+O site e publicado pelo GitHub Pages a partir da branch configurada no repositorio.
+Enquanto a SPM Tech nao tiver dominio proprio configurado, nao versionar arquivo `CNAME`.
 
-## Cuidados de conteúdo
-
-Os cases devem permanecer anonimizados. Não publique nomes de clientes, prints reais,
-estruturas internas, endpoints, tokens, schemas, logs ou dados sensíveis.
+Quando o dominio oficial for comprado e apontado para o GitHub Pages, adicione o `CNAME`
+com o dominio correto e atualize as URLs de SEO no `index.html`.
