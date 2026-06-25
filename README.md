@@ -18,11 +18,11 @@ Arquivos principais:
 
 Antes de publicar, altere no `index.html`:
 
-1. WhatsApp no link `https://wa.me/5500000000000`
-2. E-mail `contato@spmtech.com.br`
-3. Domínio, se quiser incluir nos metadados
-4. Cases anonimizados com números reais permitidos
-5. Nome completo ou assinatura comercial, se desejar
+1. WhatsApp configurado: `47 99211-8488`
+2. E-mail configurado: `nicolasfelippi6@gmail.com`
+3. Domínio sugerido/configurado no CNAME: `spmtech.com`
+4. Revisar disponibilidade/compra do domínio antes de apontar DNS
+5. Ajustar cases anonimizados com números reais quando houver autorização
 
 ## Como testar localmente
 
@@ -72,3 +72,26 @@ Para a primeira versão:
 - Vercel se futuramente quiser migrar para Next.js
 
 Para a SPM Tech hoje, GitHub Pages ou Netlify são suficientes.
+
+
+## Domínio configurado
+
+Este pacote inclui um arquivo `CNAME` com:
+
+```text
+spmtech.com
+```
+
+Se você ainda não comprou esse domínio, compre primeiro em um registrador. Se escolher outro domínio, edite o arquivo `CNAME` e o `og:url` dentro do `index.html`.
+
+## DNS para GitHub Pages
+
+Para domínio raiz/apex como `spmtech.com`, configure os registros DNS conforme a documentação oficial do GitHub Pages.
+
+Para subdomínio como `www.spmtech.com`, configure um CNAME apontando para:
+
+```text
+nicolasfelippi2005.github.io
+```
+
+Confirme o usuário exato do GitHub antes de configurar.
