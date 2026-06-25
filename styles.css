@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
 }
 
 body {
@@ -105,6 +106,13 @@ p {
   background: rgba(255, 255, 255, .06);
 }
 
+.nav a:focus-visible,
+.button:focus-visible,
+.menu-button:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+}
+
 .nav .nav-cta {
   color: #04101b;
   background: var(--text);
@@ -120,6 +128,7 @@ p {
   border: 0;
   background: transparent;
   padding: 10px;
+  cursor: pointer;
 }
 
 .menu-button span {
@@ -555,5 +564,15 @@ h3 {
 
   .footer {
     flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
   }
 }
