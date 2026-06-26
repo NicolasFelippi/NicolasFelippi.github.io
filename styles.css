@@ -429,6 +429,20 @@ h3 {
   width: min(1320px, calc(100% - 32px));
 }
 
+.bi-page-section {
+  width: min(1600px, calc(100% - 32px));
+  padding-top: 78px;
+}
+
+.bi-page-section > .section-header {
+  max-width: none;
+}
+
+.bi-page-section > .section-header h1 {
+  font-size: clamp(42px, 5vw, 72px);
+  max-width: 980px;
+}
+
 .bi-section h4 {
   margin: 0;
   color: var(--text);
@@ -437,7 +451,6 @@ h3 {
 }
 
 .bi-intro-grid,
-.report-catalog,
 .summary-grid,
 .dashboard-kpis,
 .chart-grid,
@@ -454,13 +467,11 @@ h3 {
 
 .bi-intro-grid article,
 .bi-block,
-.report-catalog article,
 .erp-report-shell,
 .chart-card,
 .dashboard-filters,
 .dashboard-band,
-.insight-panel,
-.visual-guidelines {
+.insight-panel {
   border: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
   border-radius: var(--radius);
@@ -491,7 +502,6 @@ h3 {
 
 .bi-intro-grid p,
 .bi-block-header p,
-.report-catalog p,
 .report-toolbar dd,
 .filter-chips span,
 .erp-table,
@@ -500,7 +510,6 @@ h3 {
 .dashboard-filters span,
 .chart-card p,
 .rank-list,
-.visual-guidelines p,
 .insight-grid p,
 .dashboard-band p {
   color: var(--muted);
@@ -513,37 +522,12 @@ h3 {
 
 .bi-block-header {
   display: grid;
-  grid-template-columns: 1fr minmax(260px, .55fr);
+  grid-template-columns: minmax(0, 1fr) minmax(360px, .5fr);
   gap: 28px;
   align-items: end;
   margin-bottom: 24px;
 }
 
-.report-catalog {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.report-catalog article {
-  padding: 18px;
-  box-shadow: none;
-}
-
-.report-catalog h4 {
-  min-height: 44px;
-  margin-bottom: 14px;
-  font-size: 17px;
-}
-
-.report-catalog p {
-  font-size: 13px;
-  line-height: 1.45;
-}
-
-.report-catalog p + p {
-  margin-top: 9px;
-}
-
-.report-catalog strong,
 .case-card strong {
   color: var(--text);
 }
@@ -557,7 +541,7 @@ h3 {
 
 .report-toolbar {
   display: grid;
-  grid-template-columns: minmax(260px, .8fr) 1fr;
+  grid-template-columns: minmax(300px, .9fr) minmax(0, 1.35fr);
   gap: 24px;
   padding: 24px;
   border-bottom: 1px solid var(--line);
@@ -577,7 +561,7 @@ h3 {
 
 .report-toolbar dl {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 12px;
   margin: 0;
 }
@@ -614,7 +598,7 @@ h3 {
 
 .kpi-row {
   display: grid;
-  grid-template-columns: repeat(8, minmax(130px, 1fr));
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
   gap: 12px;
   padding: 24px;
 }
@@ -625,7 +609,8 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 18px;
   background: rgba(255,255,255,.045);
-  padding: 16px;
+  min-width: 0;
+  padding: 18px;
 }
 
 .kpi-row span,
@@ -645,8 +630,9 @@ h3 {
   display: block;
   margin-top: 6px;
   color: var(--text);
-  font-size: 22px;
+  font-size: clamp(22px, 1.65vw, 30px);
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .kpi-row small,
@@ -665,7 +651,7 @@ h3 {
 
 .erp-table {
   width: 100%;
-  min-width: 1320px;
+  min-width: 1480px;
   border-collapse: collapse;
   font-size: 13px;
 }
@@ -756,8 +742,8 @@ h3 {
 
 .dashboard-shell {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 16px;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 18px;
 }
 
 .dashboard-filters {
@@ -780,7 +766,7 @@ h3 {
 }
 
 .dashboard-kpis {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
 .dashboard-kpis article {
@@ -788,11 +774,11 @@ h3 {
 }
 
 .chart-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .chart-grid.four {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .chart-card {
@@ -877,6 +863,13 @@ h3 {
   gap: 12px;
 }
 
+.horizontal-bars strong,
+.finance-grid strong,
+.rank-list strong {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 .progress-list p,
 .horizontal-bars p,
 .finance-grid p {
@@ -931,7 +924,7 @@ h3 {
 }
 
 .inventory-grid {
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .inventory-grid article {
@@ -983,16 +976,6 @@ h3 {
 
 .insight-grid strong {
   color: var(--text);
-}
-
-.visual-guidelines {
-  box-shadow: none;
-  margin-top: 16px;
-  padding: 20px;
-}
-
-.visual-guidelines h4 {
-  margin-bottom: 10px;
 }
 
 .process-section {
@@ -1079,7 +1062,6 @@ h3 {
 
   .problem-grid,
   .bi-intro-grid,
-  .report-catalog,
   .summary-grid,
   .dashboard-kpis,
   .chart-grid,
@@ -1145,7 +1127,6 @@ h3 {
   .problem-grid,
   .metric-grid,
   .bi-intro-grid,
-  .report-catalog,
   .summary-grid,
   .dashboard-kpis,
   .chart-grid,
@@ -1159,6 +1140,10 @@ h3 {
 
   .bi-section {
     width: min(var(--max), calc(100% - 32px));
+  }
+
+  .bi-page-section > .section-header h1 {
+    font-size: clamp(38px, 11vw, 54px);
   }
 
   .bi-block {
